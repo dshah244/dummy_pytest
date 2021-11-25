@@ -1,0 +1,11 @@
+[tool.pydocstyle]
+convention = 'numpy'
+
+[tool.pytest.ini_options]
+addopts = """\
+    -vs --log-level INFO --log-file test_log.log \
+    --html test_report.html --self-contained-html \
+    --disable-warnings \
+    --hello --bye \
+    --cov=conftest --cov-context=test --cov-report=html:cov_report
+"""
