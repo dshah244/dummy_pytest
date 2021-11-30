@@ -23,6 +23,7 @@ Such behaviour can be seen within the [coverage report](./cov_report/index.html)
     * code-coverage using pytest-cov
     
         ```bash
+        rm -rf .coverage
         pytest test_dummy.py --cov=conftest --cov-report=html:cov_report
         ```
 
