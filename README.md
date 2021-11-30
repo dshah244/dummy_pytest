@@ -19,9 +19,17 @@ Such behaviour can be seen within the [coverage report](./cov_report/index.html)
     pip install -U pip setuptools && pip install -r req_dev.txt
     ```
 
-2. Run tests + coverage
+2. Run tests and create code-coverage
+    * code-coverage using pytest-cov
     
-    Pytest related settings are already present within pyproject.toml
-    ```bash
-    pytest test_dummy.py
-    ```
+        ```bash
+        pytest test_dummy.py --cov=conftest --cov-report=html:cov_report
+        ```
+
+    * Code-coverage using coverage
+        
+        ```bash
+        rm -rf .coverage cov_report
+        coverage --include=conftest.py run -m pytest test_dummy.py
+        coverage html -d cov_report
+        ```
